@@ -6,9 +6,9 @@ namespace TextTransformations
     {
         static void Main(string[] args)
         {
-            string text = "This is the original text";
+            string text = string.Empty;
 
-            string result = TransformationEngine.ApplyAllTransformations(text, new ReplaceSubStringTransformation("original", "modified"), new RemoveSubStringTransformation("This "));
+            string result = TransformationEngine.ApplyAllTransformations(text, new InsertSubStringTransformation(0, "This is the original text"), new ReplaceSubStringTransformation("original", "modified"), new RemoveSubStringTransformation("This "));
 
             Console.WriteLine($"Result: {result}");
         }
